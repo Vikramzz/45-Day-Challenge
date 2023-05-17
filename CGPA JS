@@ -1,0 +1,18 @@
+// CGPA Claculator
+
+        let n = prompt("Enter Number Of Subjects");
+        n = Number.parseInt(n);
+        let arr =[];
+        for(let i = 0; i<n ; i++){
+           let  a = prompt(`Enter Your Subject ${i+1} Grade Score`);
+           a = Number.parseInt(a);
+           arr.push(a);
+        }
+        let w = prompt("Enter Your Total Weightage Of Semester");
+        w = Number.parseInt(w);
+        var sum = 0;
+        for(let i = 0 ; i<n; i++){
+            sum = sum + arr[i];
+        }
+        let CGPA = sum/w;
+        console.log(`Your CGPA is ${CGPA}`);

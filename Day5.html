@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>*{
+    margin:0px;
+    padding:0px;
+}
+.btn{
+    background-color: white ;
+    border: 1px  solid black;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 400px;
+    font-family: montserrat ;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.resp{
+    background-color: bisque;
+    width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 60px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.btn:hover{
+    background-color: aquamarine;
+    border: 1px solid aquamarine;
+}
+
+@media (max-width:700px) {
+    .btn{
+        width: 50%;
+        padding: 5px;
+        font-size: 15px;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .resp{
+        width: 80%;
+        padding: 20px;
+        font-size: 20px;
+        position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    }
+    
+}
+ </style>
+</head>
+<div class="btn" id="btn">
+    <h1>Tell me a Joke</h1>
+</div>
+<div class="resp">
+    <h3>When do you need to climb the ladder? To get to High School.</h3>
+</div>
+<body>
+    <script>
+      var joke = [`Why did the scarecrow win an award? Because he was outstanding in his field.`,`Why did the melon jump into the lake? It wanted to be a water-melon.`,`What did the duck say when it bought lipstick? “Put it on my bill.”`,`What do you call a pig that does karate? A pork chop.`,`What has a bed that you can’t sleep in? A river.`,`Why were the teacher’s eyes crossed? She couldn’t control her pupils.`,`What starts with E, ends with E, and has only 1 letter in it? An Envelope.`,`How does the ocean say hello? It waves.`,`What lights up a soccer stadium? A soccer match.`,`What creature is smarter than a talking parrot? A spelling bee.`,`Which U.S. state has the smallest soft drinks? Minnesota (as in, “mini-soda”).`,`Why couldn’t the leopard play hide and seek? Because he was always spotted.`,`Apparently, you can’t use “beef stew” as a password. It’s not stroganoff.`,`Why did the drum take a nap? It was beat.`,`Where do hamburgers go dancing?  They go to the meat-ball.`,`Why did the tomato turn red?  It saw the salad dressing.`,`Why shouldn’t you write with a broken pencil? Because it’s pointless.`,`What do you call two monkeys that share an Amazon account? Prime mates.`,`Why are teddy bears never hungry? Because they’re always stuffed!`,`Why did the tree go to the dentist? It needed a root canal.`,`If athletes get athlete’s foot, what do elves get? Mistle-toes.`,`Why couldn’t the pony sing? Because she was a little hoarse.`,`Where do cows go for entertainment? The mooooo-vies!`,`What do you call a pig that does karate? A pork chop.`,`How does NASA organize a party? They planet.`,`Why did Adele cross the road?  To sing, “Hello from the other side!`,`What runs around a yard without actually moving? A fence.`,`What’s an astronaut’s favorite candy? A Mars bar.`,`Where do sheep go to get their hair cut?  The baa-baa shop.`,`Why are there gates around cemeteries? Because people are dying to get in.`,`What do you get when you cross a snake with a pie? A pie-thon!`,`Why is Peter Pan always flying? He Neverlands.`,`What’s the most musical part of the chicken? The drumstick.`,`Why should the number 288 never be mentioned? It’s two gross.`,`Why was the math book sad? Because it had so many problems.`,`Why was six scared of seven? Because seven “ate” nine.`,`Why did the bee get married? He found his honey.`,`Did you hear the rumor about the butter? Never mind, I shouldn’t spread it!`,`I’m really good at sleeping. I can do it with my eyes closed.`,`What do you call a fake noodle? An impasta`,`Why can’t a bicycle stand on it’s own? It is two tired.`,`What is the opposite of a croissant? A happy uncle.`,`What does it make you if you see a robbery at an Apple Store? An iwitness.`,`What is an astronaut’s favorite key on a keyboard? The space bar.`,`What is brown and sticky? A stick`,`Can February March? No but April May`]
+
+document.getElementById("btn").onclick = function(){
+    let cpu1 = Math.floor(Math.random()*joke.length);
+    document.getElementsByClassName("resp")[0].style.display = "block";
+    document.getElementsByClassName("resp")[0].innerHTML = joke[cpu1];
+    joke = joke.filter(e => e !== joke[cpu1]);
+ if(joke.length == 0){
+    document.getElementsByClassName("resp")[0].innerHTML = "Stock Khatam Ho Gya Bhai";
+ }
+}</script>
+</body>
+</html>

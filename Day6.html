@@ -10,7 +10,7 @@
     <span id="practice" hidden><b>Hii </b> <i>i am ok</i></span>
 
     <script>
-        console.log(document.body.firstElementChild);
+           console.log(document.body.firstElementChild);
         console.dir(document.body.firstElementChild);
         console.log(document.body.firstElementChild.tagName);
         console.log(document.body.firstChild.nodeName);
@@ -18,6 +18,12 @@
         console.log(document.body.firstElementChild.outerHTML);
         console.log(document.body.textContent);
         document.getElementById("practice").hidden = false;
+        let a = document.getElementById("practice");
+        console.log(a.hasAttribute("id"));
+        console.log(a.getAttribute("id"));
+        a.setAttribute("style","none");
+        a.removeAttribute("style");
+        console.log(a.attributes);
 
     </script>
 </body>

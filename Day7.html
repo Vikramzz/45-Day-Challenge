@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day7</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+        .white{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <diV class="container">
+        <span>Namaste Londan</span>
+    </diV>
+    <button id="btn">Click Me</button>
+
+    <script>
+        let container = document.getElementsByClassName("container")[0];
+        let div = document.createElement("div");
+        div.innerHTML = "<p> Anmol Jaisawal</p>";
+        let div1 = document.createElement("div");
+        div1.innerHTML = "<p>Abhishek</p>";
+        let div2 = document.createElement("div");
+        div2.innerHTML = "<p>Gurgawn</p>";
+        let div3 = document.createElement("div");
+        div3.innerHTML = "<p>Delhi</p>";
+        let div4 = document.createElement("div");
+        div4.innerHTML = "<p>NAMASTE LONDON</p>";
+        container.appendChild(div);
+        container.prepend(div1);
+        container.after(div2);
+        container.before(div3);
+        container.replaceWith(div4);
+        div4.insertAdjacentHTML("afterbegin","<p>Abhishek</p>");
+        div4.insertAdjacentHTML("beforebegin","<p>Anmol Jaisawal</p>");
+        div4.insertAdjacentHTML("beforeend","<p>Dubai</p>");
+        div4.insertAdjacentHTML("afterend","<p>Iran</p>");
+        div3.remove();
+        div4.classList.add("red");
+        console.log(div4.classList.contains("red"));
+        /* div4.classList.add("white"); */
+        div4.classList.toggle("white");
+        let multi = (a,b) =>{
+          alert(a*b);
+        }
+        let a = setTimeout(multi,1000,3,2);
+        clearTimeout(a);
+        let d = (e)=>{
+            alert("hii");
+        }
+        let c = document.getElementById("btn");
+        c.addEventListener("click",d);
+    </script>
+</body>
+</html>

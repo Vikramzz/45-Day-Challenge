@@ -18,7 +18,11 @@
     <diV class="container">
         <span>Namaste Londan</span>
     </diV>
-    <button id="btn">Click Me</button>
+    <button id="btn1">Click Me</button>
+    <button id="btn2">Click Me</button>
+    <button id="btn3">Click Me</button>
+    <button id="btn4">Click Me</button>
+    <button id="btn5">Click Me</button>
 
     <script>
         let container = document.getElementsByClassName("container")[0];
@@ -54,8 +58,16 @@
         let d = (e)=>{
             alert("hii");
         }
-        let c = document.getElementById("btn");
-        c.addEventListener("click",d);
+        /* let c = document.getElementById("btn");
+        c.addEventListener("click",d); */
+
+        for(let i = 1 ; i<6; i++){
+         document.getElementById(`btn${i}`).addEventListener("click",function(e){
+            alert(`You clicked button ${i}`)
+         })
+        }
+       /*   for(let i = 1 ; i<6; i++){
+         console.log(document.getElementById(`btn${i}`))} */
     </script>
 </body>
 </html>

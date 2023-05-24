@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        .clock{
+            position: absolute;
+            text-align: center;
+            top:33%;
+            left: 28%;
+            transform: translate(-50px,-50px);
+        }
+        .hour-sec{
+            font-size: 300px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .second{
+            font-size: 100px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="contianer">
+        <div class="clock">
+            <span  id="hour" class="hour-sec"></span>
+            <span id="sec" class="second"></span>
+        </div>
+    </div>
 
+    <script>
+        let time = ()=>{
+            let a = new Date();
+            let h = a.getHours();
+            let m = a.getMinutes();
+            let s = a.getSeconds();
+            document.getElementById("hour").innerHTML = `${h}:${m}`;
+            document.getElementById("sec").innerHTML = `${s}`
+        }
+
+        setInterval( time,100);
+    </script>
+</body>
+</html>

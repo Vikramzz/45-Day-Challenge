@@ -2,8 +2,8 @@
 console.log( "You can" ,(age>18 || age == 18 )? "drive" : "not drive");*/
 
 /*let Obj = {
-    Maths : 15,
-    Thermo : 10,
+    Maths : 15 + 14,
+    Thermo : 10 + 11,
     MTT : 12,
     MOS : 10
 }

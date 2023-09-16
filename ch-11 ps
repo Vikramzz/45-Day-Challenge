@@ -1,0 +1,72 @@
+class complex{
+    constructor(real ,imagionory){
+          this.real = real;
+          this.imagionory = imagionory;
+    }
+    print(){
+        console.log(`${this.real}+${this.imagionory}i`)
+    }
+    add(num){
+        this.real = num.real + this.real;
+        this.imagionory = num.imagionory + this.imagionory;
+    }
+    get real(){
+        return this._real;
+    }
+    set real(newreal){
+        this._real = newreal;
+    }
+    get imagionory(){
+        return this._imagionory;
+    }
+    set imagionory(newimagionory){
+        this._imagionory = newimagionory;
+    }
+}
+
+let p = new complex(2,4);
+let q = new complex(3,5);
+console.log(p.real);
+console.log(p.imagionory);
+p.real = 6;
+p.imagionory = 12;
+console.log(p.real);
+console.log(p.imagionory);
+p.print()
+p.add(q)
+p.print()
+
+class human{
+    constructor(name,sex,age){
+        this.name = name;
+        this.sex = sex;
+        this.age = age;
+    }
+    eat(){
+        console.log(`${this.name} is eating`);
+    }
+    sleep(){
+        console.log(`${this.name} is sleeping`);
+    }
+    drinking(){
+        console.log(`${this.name} is drinking`);
+    }
+    walking(){
+        console.log(`${this.name} is walking`);
+    }
+    crying(){
+        console.log(`${this.name} is crying`);
+    }
+}
+
+class student extends human{
+          constructor(name,sex,age,std){
+            super(name,sex,age)
+              this.std = std;
+          }
+}
+
+let student1 = new student("vikram","Male",19,3);
+console.log(`${student1.name} is a student of ${student1.std}, he is ${student1.age} year old`);
+
+console.log(student1 instanceof human);
